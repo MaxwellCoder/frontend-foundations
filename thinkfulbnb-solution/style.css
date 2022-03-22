@@ -31,7 +31,7 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
@@ -64,6 +64,17 @@ header {
   color: #fff;
 }
 
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
 header nav ul li {
   list-style-type: none;
 }
@@ -81,9 +92,6 @@ header nav ul li a:hover {
 
 /* -------  Search Form ------- */
 form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   border: 2px solid #ff385c;
   padding: 10px;
 }
@@ -95,8 +103,12 @@ form label {
 form select,
 form input {
   margin-bottom: 20px;
-  width: 65%;
-  float: right;
+  width: 180px;
+}
+
+form div {
+  display: flex;
+  justify-content:space-between;
 }
 
 form button {
@@ -121,54 +133,48 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 600px) {
-  header {
-    background-color: #ff385c;
+@media all and (min-width: 450px) {
+
+  .logo {
+    margin-top: 15px;
+    font-family: Times, Times New Roman, serif;
+    font-size: 40px;
+    color: #fff;
+  }
+
+  .group {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  form{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  header nav {
-    padding: 10px;
-  }
-
-  form {
-    flex-direction: row;
-  }
-
-  .group {
+  form div{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-flow: row nowrap;
-    align-items: center;
-  }
-
-  .vacation-form .item {
-    display: flex block;
-    flex: 1 1 auto;
     flex-direction: column;
   }
 
-  .item label
-  , .item input 
-  , .item select 
-  , .item button{
+  header {
     display: flex;
-    width: 100%
+    padding: 0 30px;
+    justify-content: space-between;
   }
 
-  .grid-column {
-    display: flex;
-    flex: 1;
-    flex-direction: column; 
-    margin: 10px;
+  header h1 {
+    font-size: 42px;
+    margin: 15px 0;
+    padding-top: 6px;
   }
 
-  .grid-row {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
+  header nav {
+    margin-top: 15px;
+  }
+
+  form button{
+    width: 10%
   }
 }
